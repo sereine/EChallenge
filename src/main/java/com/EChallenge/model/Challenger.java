@@ -7,6 +7,8 @@ public class Challenger {
 	private String email;
 	private String tel;
 	
+	
+	
 	public int getChallengerId() {
 		return challengerId;
 	}
