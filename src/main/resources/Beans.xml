@@ -10,5 +10,20 @@
     <bean id="hello" class="com.EChallenge.model.hello">
        <property name="message" value="Hello World!"/>
    </bean>
+   <bean id="Challenger" class="com.EChallenge.model.Challenger">
+       <property name="message" value="Hello World!"/>
+   </bean>
+   <bean id="Developpeur" class="com.EChallenge.model.Developpeur">
+       <property name="message" value="Hello World!"/>
+   </bean>
+   <bean id="Etudiant" class="com.EChallenge.model.Etudiant">
+       <property name="message" value="Hello World!"/>
+   </bean>
+   <bean id="Professeur" class="com.EChallenge.model.Professeur">
+       <property name="message" value="Hello World!"/>
+   </bean>
+   <bean id="Classe" class="com.EChallenge.model.Classe">
+       <property name="message" value="Hello World!"/>
+   </bean>
  
 </beans>
