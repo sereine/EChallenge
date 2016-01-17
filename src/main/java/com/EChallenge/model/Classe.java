@@ -6,6 +6,8 @@ public class Classe {
 		private String nom;
 		private int nbrEtudiants;
 		
+		
+		
 		public int getClasseId() {
 			return classeId;
 		}
