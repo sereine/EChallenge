@@ -1,8 +1,21 @@
 package com.EChallenge.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "DEVELOPPEUR")
 public class Developpeur extends Challenger{
 	
+	@Id
+    @GeneratedValue
+	@Column(name = "developpeurId")
 	private int developpeurId;
+	
+	@Column(name = "description")
 	private String description;
 
 	public String getDescription() {
