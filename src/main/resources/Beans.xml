@@ -11,5 +11,10 @@
    <bean id="Etudiant" class="com.EChallenge.model.Etudiant"></bean>
    <bean id="Professeur" class="com.EChallenge.model.Professeur"> </bean>
    <bean id="Classe" class="com.EChallenge.model.Classe"></bean>
+   <bean id="Entreprise" class="com.EChallenge.model.Entreprise"></bean>
+   <bean id="Compte" class="com.EChallenge.model.Compte"></bean>
+   <bean id="Niveaux" class="com.EChallenge.model.Niveaux"></bean>
+   <bean id="Competence" class="com.EChallenge.model.Competence"></bean>
+   <bean id="Etablissement" class="com.EChallenge.model.Etablissement"></bean>
  
 </beans>
