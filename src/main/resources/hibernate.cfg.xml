@@ -14,9 +14,23 @@
         <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/EChallenge</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
+        
+        
+        
+       
  
         <!-- add classes to map from here -->
         <mapping class="com.EChallenge.model.Challenger" />
+        <mapping class="com.EChallenge.model.Developpeur" />
+        <mapping class="com.EChallenge.model.Etudiant" />
+        <mapping class="com.EChallenge.model.Professeur" />
+        <mapping class="com.EChallenge.model.Classe" />
+        <mapping class="com.EChallenge.model.Entreprise" />
+        <mapping class="com.EChallenge.model.Compte" />
+        <mapping class="com.EChallenge.model.Niveaux" />
+        <mapping class="com.EChallenge.model.Competence" />
+        <mapping class="com.EChallenge.model.Etablissement" />
+        
         
     </session-factory>
 </hibernate-configuration>
