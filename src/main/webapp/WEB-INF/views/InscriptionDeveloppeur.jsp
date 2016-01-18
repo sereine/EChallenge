@@ -10,7 +10,7 @@
 <body>
 
 <h3>Inscription Developpeur</h3>
-<form:form method="POST"  modelAttribute="">
+<form:form method="POST"  modelAttribute="Developpeur">
     <table>
         <tr>
             <td>Nom</td>
@@ -34,22 +34,22 @@
         </tr>
         <tr>
             <td>nom utilisateur</td>
-            <td><form:input path="nomUtilisateur"/></td>
+            <td><form:input path="compte.nomUtilisateur"/></td>
         </tr>
         <tr>
             <td>Mot de passe</td>
-            <td><form:input path="motDePasse"/></td>
+            <td><form:input path="compte.motDePasse"/></td>
         </tr>
         <tr>
             <td>Compétence</td>
             <td>Niveau</td>
         </tr>
         <tr>
-        <tr>
-            <td><form:input path="competence"/></td>
-            <td><form:input path="niveau"/></td>
+        <%-- <tr>
+            <td><form:input path="competence.nom"/></td>
+            <td><form:input path="niveau."/></td>
         </tr>
-        <tr>
+        <tr>--%>
             <td colspan="2">
                 <input type="submit"/>
             </td>

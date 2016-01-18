@@ -32,13 +32,13 @@
             <td>CNE</td>
             <td><form:input path="cne"/></td>
         </tr>
-        <tr>
+         <tr>
             <td>nom utilisateur</td>
-            <td><form:input path="nomUtilisateur"/></td>
+            <td><form:input path="compte.nomUtilisateur"/></td>
         </tr>
         <tr>
             <td>Mot de passe</td>
-            <td><form:input path="motDePasse"/></td>
+            <td><form:input path="compte.motDePasse"/></td>
         </tr>
         <tr>
             <td colspan="2">

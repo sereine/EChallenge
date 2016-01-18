@@ -17,8 +17,8 @@ public class Compte {
     @Column(name = "compteId")
 	private int compteId;
 	
-	@Column(name = "password")
-	private String password;
+	@Column(name = "motDePasse")
+	private String motDePasse;
 
 	@Column(name = "nomUtilisateur")
 	private String nomUtilisateur;
@@ -31,12 +31,12 @@ public class Compte {
 		this.compteId = id;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getMotDePasse() {
+		return motDePasse;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
 	}
 
 	public int getCompteId() {

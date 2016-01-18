@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Inscription Professeur</title>
+<title>Inscription Entreprise</title>
 </head>
 <body>
 
-<h3>Inscription Professeur</h3>
+<h3>Inscription Entreprise</h3>
 <form:form method="POST"  modelAttribute="">
     <table>
         <tr>
@@ -17,22 +17,26 @@
             <td><form:input path="nom"/></td>
         </tr>
         <tr>
-            <td>Prénom</td>
-            <td><form:input path="prenom"/></td>
+            <td>Taille</td>
+            <td><form:input path="taille"/></td>
         </tr>
         <tr>
+            <td>Adresse</td>
+            <td><form:input path="adresse"/></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><form:input path="description"/></td>
+        </tr>
+        <tr>
+            <td>Telephone</td>
+            <td><form:input path="tel"/></td>
+        </tr>
+         <tr>
             <td>Email</td>
             <td><form:input path="email"/></td>
         </tr>
         <tr>
-            <td>Téléphone</td>
-            <td><form:input path="tel"/></td>
-        </tr>
-        <tr>
-            <td>Réference</td>
-            <td><form:input path="reference"/></td>
-        </tr>
-         <tr>
             <td>nom utilisateur</td>
             <td><form:input path="compte.nomUtilisateur"/></td>
         </tr>
@@ -40,6 +44,7 @@
             <td>Mot de passe</td>
             <td><form:input path="compte.motDePasse"/></td>
         </tr>
+        
         <tr>
             <td colspan="2">
                 <input type="submit"/>

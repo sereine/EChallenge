@@ -5,40 +5,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Inscription Professeur</title>
+<title>Authentification</title>
 </head>
 <body>
 
-<h3>Inscription Professeur</h3>
+<h3>Authentification</h3>
 <form:form method="POST"  modelAttribute="">
     <table>
-        <tr>
-            <td>Nom</td>
-            <td><form:input path="nom"/></td>
-        </tr>
-        <tr>
-            <td>Prénom</td>
-            <td><form:input path="prenom"/></td>
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td><form:input path="email"/></td>
-        </tr>
-        <tr>
-            <td>Téléphone</td>
-            <td><form:input path="tel"/></td>
-        </tr>
-        <tr>
-            <td>Réference</td>
-            <td><form:input path="reference"/></td>
-        </tr>
          <tr>
             <td>nom utilisateur</td>
-            <td><form:input path="compte.nomUtilisateur"/></td>
+            <td><form:input path="nomUtilisateur"/></td>
         </tr>
         <tr>
             <td>Mot de passe</td>
-            <td><form:input path="compte.motDePasse"/></td>
+            <td><form:input path="motDePasse"/></td>
         </tr>
         <tr>
             <td colspan="2">
