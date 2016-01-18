@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h3>Ajouter classe</h3>
-	<form:form method="POST" modelAttribute="">
+	<form:form method="POST" modelAttribute="Classe">
 		<table>
 			<tr>
 				<td>Nom Classe</td>
