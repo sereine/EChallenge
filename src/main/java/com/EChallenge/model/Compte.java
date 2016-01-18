@@ -1,11 +1,28 @@
 package com.EChallenge.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "COMPTE")
 public class Compte {
 	
+	
+	@Id
+    @GeneratedValue
+    @Column(name = "compteId")
 	private int compteId;
-	private String nomUtilisateur;
+	
+	@Column(name = "password")
 	private String password;
-		
+
+	@Column(name = "nomUtilisateur")
+	private String nomUtilisateur;
+
 	public int getId() {
 		return compteId;
 	}
@@ -40,3 +57,4 @@ public class Compte {
 
 
 }
+
