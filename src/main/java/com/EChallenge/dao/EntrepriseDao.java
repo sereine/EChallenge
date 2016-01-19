@@ -12,7 +12,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.EChallenge.model.Entreprise;
 
-public class EntrepriseDao {
+public interface EntrepriseDao {
 
 	private SessionFactory sessionFactory;
 	Session session;

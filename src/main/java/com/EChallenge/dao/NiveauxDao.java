@@ -1,5 +1,5 @@
 package com.EChallenge.dao;
 
-public class NiveauxDao {
+public interface NiveauxDao {
 
 }

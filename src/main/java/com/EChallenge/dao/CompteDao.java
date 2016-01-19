@@ -12,37 +12,9 @@ import org.hibernate.cfg.Configuration;
 
 import com.EChallenge.model.Compte;
 
-public class CompteDao {
+public interface CompteDao {
 
-	private SessionFactory sessionFactory;
-
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
 	
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-	
-	@SuppressWarnings("deprecation")
-	public void save(Compte compte) throws NullPointerException, SecurityException, RollbackException, HeuristicMixedException, HeuristicRollbackException, SystemException {
-		Configuration configuration = new Configuration().configure();
-		SessionFactory sessionFactory = configuration.buildSessionFactory();
-		Session session = sessionFactory.openSession();
-		Transaction tx = null;
-		try {
-			tx = (Transaction) session.beginTransaction();
-			session.saveOrUpdate(compte);
-			tx.commit();
-		} catch (NullPointerException e) {
-			if (tx != null)
-				tx.rollback();
-			throw e;
-		} finally {
-			session.close();
-		}
-
-	}
 
 	
 }
