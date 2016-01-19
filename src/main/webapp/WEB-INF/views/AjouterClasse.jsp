@@ -21,7 +21,7 @@
 			</tr>
 			<tr>
 				<td>Etablissement</td>
-				<td><form:select path="etablissement"/></td>
+				<td><form:input path="etablissement"/></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" /></td>

@@ -16,5 +16,6 @@
    <bean id="Niveaux" class="com.EChallenge.model.Niveaux"></bean>
    <bean id="Competence" class="com.EChallenge.model.Competence"></bean>
    <bean id="Etablissement" class="com.EChallenge.model.Etablissement"></bean>
- 
+   <bean id="EntrepriseDao" class="com.EChallenge.dao.EntrepriseDao"></bean>
+   <bean id="CompteDao" class="com.EChallenge.dao.CompteDao"></bean>
 </beans>

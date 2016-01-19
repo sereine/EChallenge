@@ -95,6 +95,8 @@ public class Entreprise {
 	public void setCompte(Compte compte) {
 		this.compte = compte;
 	}
+	
+	
 	public Set<Developpeur> getDeveloppeur() {
 		return developpeur;
 	}

@@ -1,6 +1,9 @@
 package com.EChallenge.controller;
 
-import java.util.Locale;
+import javax.transaction.HeuristicMixedException;
+import javax.transaction.HeuristicRollbackException;
+import javax.transaction.RollbackException;
+import javax.transaction.SystemException;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -9,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.EChallenge.dao.CompteDao;
+import com.EChallenge.dao.EntrepriseDao;
 import com.EChallenge.model.Classe;
 import com.EChallenge.model.Compte;
 import com.EChallenge.model.Developpeur;
@@ -30,7 +35,6 @@ public class Inscription {
 		
 		return "InscriptionDeveloppeur";
 	}
-	
 	
 	@RequestMapping(value = "/InscriptionProfesseur", method = RequestMethod.GET)
 	public String inscriptionProfesseur(Model model) {
@@ -64,6 +68,8 @@ public class Inscription {
 		
 		return "InscriptionEntreprise";
 	}
+	
+	
 	
 	@RequestMapping(value = "/AjouterClasse", method = RequestMethod.GET)
 	public String AjouterClasse(Model model) {

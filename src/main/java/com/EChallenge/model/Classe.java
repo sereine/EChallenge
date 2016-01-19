@@ -34,6 +34,7 @@ public class Classe {
 		
 		@ManyToOne
 		@Cascade(CascadeType.ALL)
+		@Column(name = "etablissement")
 		private Etablissement etablissement;
 		
 		public String getClasseId() {
@@ -59,6 +60,12 @@ public class Classe {
 		}
 		public void setEtudiants(Set<Etudiant> etudiants) {
 			this.etudiants = etudiants;
+		}
+		public Etablissement getEtablissement() {
+			return etablissement;
+		}
+		public void setEtablissement(Etablissement etablissement) {
+			this.etablissement = etablissement;
 		}
     
 }
