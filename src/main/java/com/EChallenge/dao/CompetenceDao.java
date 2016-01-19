@@ -1,5 +1,5 @@
 package com.EChallenge.dao;
 
-public class Etablissement {
+public class CompetenceDao {
 
 }
