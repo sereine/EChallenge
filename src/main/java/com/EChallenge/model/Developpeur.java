@@ -17,6 +17,7 @@ public class Developpeur extends Challenger{
 	
 	@Column(name = "description")
 	private String description;
+	
 
 	public String getDescription() {
 		return description;

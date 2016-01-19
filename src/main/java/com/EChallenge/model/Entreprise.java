@@ -1,10 +1,16 @@
 package com.EChallenge.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 public class Entreprise {
 	
@@ -35,9 +41,10 @@ public class Entreprise {
 	@JoinColumn(name = "compteId")
     private Compte compte;
     
-    @OneToOne
-	@JoinColumn(name = "developpeurId")
-    private Developpeur developpeur;
+    @OneToMany
+    @JoinColumn(name = "developpeurId")
+	@Cascade(CascadeType.ALL)
+    private Set<Developpeur> developpeur;
     
     
 	public int getEntrepriseId() {
@@ -88,12 +95,13 @@ public class Entreprise {
 	public void setCompte(Compte compte) {
 		this.compte = compte;
 	}
-	public Developpeur getDeveloppeur() {
+	public Set<Developpeur> getDeveloppeur() {
 		return developpeur;
 	}
-	public void setDeveloppeur(Developpeur developpeur) {
+	public void setDeveloppeur(Set<Developpeur> developpeur) {
 		this.developpeur = developpeur;
 	}
+	
 
 	
 }

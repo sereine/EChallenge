@@ -6,7 +6,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Table(name = "ETABLISSEMENT")
@@ -26,6 +31,8 @@ public class Etablissement {
 	@Column(name = "tel")
     private String tel;
 	
+	@OneToMany(mappedBy="etablissemnet")
+	@Cascade(CascadeType.ALL)
 	private Set<Classe> classes;
 	
 	
