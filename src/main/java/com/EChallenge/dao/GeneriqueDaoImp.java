@@ -11,10 +11,10 @@ public class GeneriqueDaoImp<T, PK extends Serializable>
         this.type = type;
     }
 
-	public PK create(T newInstance) {
+	/*public PK create(T newInstance) {
 		return (PK) getSession().save(o);
 		
-	}
+	}*/
 
 	public T read(PK id) {
 		// TODO Auto-generated method stub
@@ -29,6 +29,11 @@ public class GeneriqueDaoImp<T, PK extends Serializable>
 	public void delete(T persistentObject) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public PK create(T newInstance) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

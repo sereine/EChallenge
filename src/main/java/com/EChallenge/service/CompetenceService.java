@@ -1,10 +1,8 @@
-package com.EChallenge.dao;
-
+package com.EChallenge.service;
 
 import com.EChallenge.model.Competence;
 
-public interface CompetenceDao {
-
+public interface CompetenceService {
 	void add(Competence competence);
 
 	void update(Competence competence);
@@ -12,4 +10,5 @@ public interface CompetenceDao {
 	void delete(Competence competence);
 
 	Competence findByCompetenceId(int competenceId);
+
 }

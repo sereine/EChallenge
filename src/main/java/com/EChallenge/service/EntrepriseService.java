@@ -1,5 +1,14 @@
 package com.EChallenge.service;
 
-public class EntrepriseService {
+import com.EChallenge.model.Entreprise;
 
+public interface EntrepriseService {
+	
+	void add(Entreprise entreprise);
+
+	void update(Entreprise entreprise);
+
+	void delete(Entreprise entreprise);
+
+	Entreprise findByEntrepriseId(int entrepriseId);
 }

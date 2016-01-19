@@ -1,8 +1,8 @@
-package com.EChallenge.dao;
+package com.EChallenge.service;
 
 import com.EChallenge.model.Etablissement;
 
-public interface EtablissementDao {
+public interface EtablissementService {
 	void add(Etablissement etablissement);
 
 	void update(Etablissement etablissement);

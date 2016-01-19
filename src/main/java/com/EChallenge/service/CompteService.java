@@ -1,9 +1,8 @@
-package com.EChallenge.dao;
-
+package com.EChallenge.service;
 
 import com.EChallenge.model.Compte;
 
-public interface CompteDao {
+public interface CompteService {
 	void add(Compte compte);
 
 	void update(Compte compte);
@@ -11,7 +10,5 @@ public interface CompteDao {
 	void delete(Compte compte);
 
 	Compte findByCompteId(int compteId);
-	
 
-	
 }

@@ -32,14 +32,12 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 		getSession().persist(entity);
 	}
 
-	public void delete(T entity) {
+	public void supprimer(T entity) {
 		getSession().delete(entity);
 	}
 	
-	public void update(T entity) {
+	public void modifier(T entity) {
 		getSession().update(entity);
 	}
 	
-
-
 }
