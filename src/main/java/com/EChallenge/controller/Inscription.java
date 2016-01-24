@@ -71,6 +71,8 @@ public class Inscription {
 	
 	
 	
+	
+	
 	@RequestMapping(value = "/AjouterClasse", method = RequestMethod.GET)
 	public String AjouterClasse(Model model) {
 		

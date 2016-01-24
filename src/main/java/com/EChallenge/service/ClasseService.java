@@ -9,6 +9,6 @@ public interface ClasseService {
 
 	void delete(Classe classe);
 
-	Classe findByClasseId(int classeId);
+	Classe findByClasseId(String classeId);
 
 }

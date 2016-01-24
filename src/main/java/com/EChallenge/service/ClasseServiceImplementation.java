@@ -22,7 +22,7 @@ public class ClasseServiceImplementation implements ClasseService{
 		
 	}
 
-	public Classe findByClasseId(int classeId) {
+	public Classe findByClasseId(String classeId) {
 		return classedao.findByClasseId(classeId);
 		
 	}
