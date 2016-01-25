@@ -10,7 +10,7 @@
 <body>
 
 <h3>Inscription Developpeur</h3>
-<form:form method="POST"  modelAttribute="Developpeur">
+<form:form method="POST"  modelAttribute="developpeur">
     <table>
         <tr>
             <td>Nom</td>

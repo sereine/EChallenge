@@ -2,7 +2,7 @@ package com.EChallenge.dao;
 
 import com.EChallenge.model.Entreprise;
 
-public class EntrepriseDaoImplmentation extends AbstractDao<Integer, Entreprise> implements EntrepriseDao{
+public class EntrepriseDaoImplementation extends AbstractDao<Integer, Entreprise> implements EntrepriseDao{
 
 	public void add(Entreprise entreprise) {
 		this.persist(entreprise);
