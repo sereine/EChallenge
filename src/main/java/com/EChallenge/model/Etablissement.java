@@ -19,8 +19,8 @@ public class Etablissement {
 	
 	@Id
     @GeneratedValue
-	@Column(name = "etablissmentId")
-	private int etablissmentId;
+	@Column(name = "etablissementId")
+	private int etablissementId;
 	
 	@Column(name = "nom")
     private String nom;
@@ -31,16 +31,16 @@ public class Etablissement {
 	@Column(name = "tel")
     private String tel;
 	
-	@OneToMany(mappedBy="etablissemnet")
+	@OneToMany(mappedBy="etablissement")
 	@Cascade(CascadeType.ALL)
 	private Set<Classe> classes;
 	
 	
-	public int getEtablissmentId() {
-		return etablissmentId;
+	public int getEtablissementId() {
+		return etablissementId;
 	}
-	public void setEtablissmentId(int etablissmentId) {
-		this.etablissmentId = etablissmentId;
+	public void setEtablissmentId(int etablissementId) {
+		this.etablissementId = etablissementId;
 	}
 	public String getNom() {
 		return nom;

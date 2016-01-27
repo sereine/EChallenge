@@ -16,5 +16,25 @@
    <bean id="Niveaux" class="com.EChallenge.model.Niveaux"></bean>
    <bean id="Competence" class="com.EChallenge.model.Competence"></bean>
    <bean id="Etablissement" class="com.EChallenge.model.Etablissement"></bean>
- 
+   <bean id="EntrepriseDaoImplementation" class="com.EChallenge.dao.EntrepriseDaoImplementation"></bean>
+   <bean id="EtudiantDaoImplementation" class="com.EChallenge.dao.EtudiantDaoImplementation"></bean>
+   <bean id="ProfesseurDaoImplementation" class="com.EChallenge.dao.ProfesseurDaoImplementation"></bean>
+   <bean id="ClasseDaoImplementation" class="com.EChallenge.dao.ClasseDaoImplementation"></bean>
+   <bean id="NiveauxDaoImplementation" class="com.EChallenge.dao.NiveauxDaoImplementation"></bean>
+   <bean id="CompetenceDaoImplementation" class="com.EChallenge.dao.CompetenceDaoImplementation"></bean>
+   <bean id="EtablissementDaoImplementation" class="com.EChallenge.dao.EtablissementDaoImplementation"></bean>
+   <bean id="DeveloppeurDaoImplementation" class="com.EChallenge.dao.DeveloppeurDaoImplementation"></bean>
+   <bean id="ChallengerDaoImplementation" class="com.EChallenge.dao.ChallengerDaoImplementation"></bean>
+   <bean id="CompteDaoImplementation" class="com.EChallenge.dao.CompteDaoImplementation"></bean>
+   <bean id="EntrepriseServiceImplementation" class="com.EChallenge.service.EntrepriseServiceImplementation"></bean>
+   <bean id="EtudiantServiceImplementation" class="com.EChallenge.service.EtudiantServiceImplementation"></bean>
+   <bean id="ProfesseurServiceImplementation" class="com.EChallenge.service.ProfesseurServiceImplementation"></bean>
+   <bean id="ClasseServiceImplementation" class="com.EChallenge.service.ClasseServiceImplementation"></bean>
+   <bean id="NiveauxServiceImplementation" class="com.EChallenge.service.NiveauxServiceImplementation"></bean>
+   <bean id="CompetenceServiceImplementation" class="com.EChallenge.service.CompetenceServiceImplementation"></bean>
+   <bean id="EtablissementServiceImplementation" class="com.EChallenge.service.EtablissementServiceImplementation"></bean>
+   <bean id="DeveloppeurServiceImplementation" class="com.EChallenge.service.DeveloppeurServiceImplementation"></bean>
+   <bean id="ChallengerServiceImplementation" class="com.EChallenge.service.ChallengerServiceImplementation"></bean>
+   <bean id="CompteServiceImplementation" class="com.EChallenge.service.CompteServiceImplementation"></bean>
+   
 </beans>

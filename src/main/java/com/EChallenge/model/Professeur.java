@@ -17,10 +17,7 @@ import org.hibernate.annotations.CascadeType;
 @Table(name = "PROFESSEUR")
 public class Professeur extends Challenger{
 
-	@Id
-    @GeneratedValue
-	@Column(name = "professeurId")
-	private int professeurId;
+	
 	
 	
 	@Column(name = "reference")
@@ -39,13 +36,6 @@ public class Professeur extends Challenger{
 		this.reference = reference;
 	}
 
-	public int getProfesseurId() {
-		return professeurId;
-	}
-
-	public void setProfesseurId(int professeurId) {
-		this.professeurId = professeurId;
-	}
 
 	public Set<Classe> getClasses() {
 		return classes;

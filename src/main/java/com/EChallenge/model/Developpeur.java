@@ -10,10 +10,6 @@ import javax.persistence.Table;
 @Table(name = "DEVELOPPEUR")
 public class Developpeur extends Challenger{
 	
-	@Id
-    @GeneratedValue
-	@Column(name = "developpeurId")
-	private int developpeurId;
 	
 	@Column(name = "description")
 	private String description;
@@ -26,11 +22,4 @@ public class Developpeur extends Challenger{
 		this.description = description;
 	}
 
-	public int getDeveloppeurId() {
-		return developpeurId;
-	}
-
-	public void setDeveloppeurId(int developpeurId) {
-		this.developpeurId = developpeurId;
-	}
 }

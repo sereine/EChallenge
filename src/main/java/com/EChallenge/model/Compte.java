@@ -23,12 +23,13 @@ public class Compte {
 	@Column(name = "nomUtilisateur")
 	private String nomUtilisateur;
 
-	public int getId() {
+	
+	public int getCompteId() {
 		return compteId;
 	}
 
-	public void setId(int id) {
-		this.compteId = id;
+	public void setCompteId(int compteId) {
+		this.compteId = compteId;
 	}
 
 	public String getMotDePasse() {
@@ -39,13 +40,7 @@ public class Compte {
 		this.motDePasse = motDePasse;
 	}
 
-	public int getCompteId() {
-		return compteId;
-	}
-
-	public void setCompteId(int compteId) {
-		this.compteId = compteId;
-	}
+	
 
 	public String getNomUtilisateur() {
 		return nomUtilisateur;

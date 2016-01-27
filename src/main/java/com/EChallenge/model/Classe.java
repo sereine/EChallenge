@@ -34,7 +34,7 @@ public class Classe {
 		
 		@ManyToOne
 		@Cascade(CascadeType.ALL)
-		@Column(name = "etablissement")
+		@JoinColumn(name = "etablissementId")
 		private Etablissement etablissement;
 		
 		public String getClasseId() {

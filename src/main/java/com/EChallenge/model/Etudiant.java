@@ -10,10 +10,7 @@ import javax.persistence.Table;
 @Table(name = "ETUDIANT")
 public class Etudiant extends Challenger{
 
-	@Id
-    @GeneratedValue
-	@Column(name = "etudiantId")
-	private int etudiantId;
+	
 	
 	@Column(name = "cne")
 	private String cne;
@@ -26,13 +23,6 @@ public class Etudiant extends Challenger{
 		this.cne = cne;
 	}
 
-	public int getEtudiantId() {
-		return etudiantId;
-	}
-
-	public void setEtudiantId(int etudiantId) {
-		this.etudiantId = etudiantId;
-	}
 
 }
 
