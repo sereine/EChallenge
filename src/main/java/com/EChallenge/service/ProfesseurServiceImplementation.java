@@ -1,10 +1,15 @@
 package com.EChallenge.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.EChallenge.dao.ProfesseurDao;
 import com.EChallenge.model.Professeur;
 
-public class ProfesseurServiceImplementation implements ProfesseurService {
+@Service
 
+public class ProfesseurServiceImplementation implements ProfesseurService {
+	@Autowired
 	private ProfesseurDao professeurdao;
 	
 	public void add(Professeur professeur) {

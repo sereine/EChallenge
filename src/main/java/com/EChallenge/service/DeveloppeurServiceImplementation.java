@@ -1,10 +1,15 @@
 package com.EChallenge.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.EChallenge.dao.DeveloppeurDao;
 import com.EChallenge.model.Developpeur;
 
-public class DeveloppeurServiceImplementation implements DeveloppeurService {
+@Service
 
+public class DeveloppeurServiceImplementation implements DeveloppeurService {
+	@Autowired
 	private DeveloppeurDao developpeurdao;
 	
 	public void add(Developpeur developpeur) {
