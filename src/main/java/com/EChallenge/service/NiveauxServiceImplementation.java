@@ -15,6 +15,7 @@ public class NiveauxServiceImplementation implements NiveauxService{
 	private NiveauxDao niveauxdao;
 	
 	public void add(Niveaux niveaux) {
+		
 		System.out.println("Service  "+niveaux.getNiveauxId()+"  "+niveaux.getNiveau());
 		niveauxdao.add(niveaux);
 		

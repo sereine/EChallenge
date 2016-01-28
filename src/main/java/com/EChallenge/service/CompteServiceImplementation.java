@@ -1,6 +1,8 @@
 package com.EChallenge.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 import com.EChallenge.dao.CompteDao;
@@ -14,6 +16,9 @@ public class CompteServiceImplementation implements CompteService {
 	
 	public void add(Compte compte) {
 		// TODO Auto-generated method stub
+		System.out.println("service   "+compte.getNomUtilisateur());
+		//AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		//comptedao = (CompteDao) context.getBean("CompteDaoImplementation");
 		comptedao.add(compte);
 	}
 

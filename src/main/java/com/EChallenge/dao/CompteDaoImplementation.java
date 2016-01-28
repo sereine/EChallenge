@@ -13,6 +13,7 @@ import com.EChallenge.model.Compte;
 public class CompteDaoImplementation extends AbstractDao<Integer, Compte> implements CompteDao{
 
 	public void add(Compte compte) {
+		System.out.println("dao   "+compte.getNomUtilisateur());
 		this.persist(compte);
 		
 	}

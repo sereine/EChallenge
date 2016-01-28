@@ -1,7 +1,13 @@
 package com.EChallenge.dao;
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.EChallenge.model.Developpeur;
 
+@Repository
+@Transactional
 public class DeveloppeurDaoImplementation extends AbstractDao<Integer, Developpeur> implements DeveloppeurDao{
 
 	public void add(Developpeur developpeur) {

@@ -1,7 +1,13 @@
 package com.EChallenge.dao;
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.EChallenge.model.Etudiant;
 
+@Repository
+@Transactional
 public class EtudiantDaoImplementation extends AbstractDao<Integer, Etudiant> implements EtudiantDao{
 
 	public void add(Etudiant etudiant) {

@@ -29,8 +29,12 @@ import com.EChallenge.service.NiveauxService;
 @Controller
 public class Inscription {
 	
+	
 	@Autowired
-	NiveauxService n;
+	CompteService compte;
+	
+	@Autowired
+	DeveloppeurService dev; 
 	
 	@RequestMapping(value = "/InscriptionDeveloppeur", method = RequestMethod.GET)
 	public String inscriptionDeveloppeur(Model model) {
@@ -45,29 +49,18 @@ public class Inscription {
 	
 	@RequestMapping(value = "/InscriptionDeveloppeur", method = RequestMethod.POST)
 	public String EnregistrerDeveloppeur(@ModelAttribute("developpeur") Developpeur developpeur,Model model) {
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		
-		try
-		{
 		
-		Set<Competence> cc=new HashSet<Competence>();
-		Competence c=(Competence) context.getBean("Competence");
-		c.setNom("nom"); c.setCompetenceId(1);
-		cc.add(c);
-		System.out.println(" \n\n   **************************ccocococ \n ");
-		System.out.println(developpeur.getCompte()+" test " + developpeur.getCompte().getNomUtilisateur());
-        developpeur.setCompetences(cc);
-        CompteService compte = (CompteService) context.getBean("CompteServiceImplementation");
+		System.out.println(developpeur.getDescription()+"  "+developpeur.getCompte().getNomUtilisateur());
+		
+		
+		//AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        //CompteService compte = (CompteService) context.getBean("CompteServiceImplementation");
         compte.add(developpeur.getCompte());
 	    //DeveloppeurService dev = (DeveloppeurService) context.getBean("DeveloppeurServiceImplementation");
-	    
-		//dev.add(developpeur);
-		}
-		catch(NullPointerException e)
-		{
-			System.out.println(e.getMessage());
-		}
-		return "Authentification";
+		dev.add(developpeur);
+		
+		return "redirect:/Authentification";
 	}
 	
 	@RequestMapping(value = "/InscriptionProfesseur", method = RequestMethod.GET)
@@ -129,33 +122,20 @@ public class Inscription {
 		return "Authentification";
 	}
 	
-	
-	@RequestMapping(value = "/niveau", method = RequestMethod.GET)
-	public String nn(Model model) {
+
+	@RequestMapping(value = "/Authentification", method = RequestMethod.POST)
+	public String login(Model model) {
 		
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
-		Niveaux nn = (Niveaux) context.getBean("Niveaux");
+		Compte compte = (Compte) context.getBean("Compte");
+		model.addAttribute("Compte" , compte);
 		
-		
-		model.addAttribute("nn" , nn);
-		System.out.println("++++++++++++++");
-		return "niveau";
-	}
-	
-	
-	@RequestMapping(value = "/niveau", method = RequestMethod.POST)
-	public String Enregistrer(@ModelAttribute("nn") Niveaux nn,Model model) {  
-		
-		//AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-		//NiveauxService n = (NiveauxService) context.getBean("NiveauxServiceImplementation");
-        nn.setNiveau(EnumNiveaux.AVANCE);
-		nn.setNiveauxId(1);
-        System.out.println("controlleur  "+nn.getNiveauxId()+"  "+nn.getNiveau());
-        n.add(nn);
 		return "Authentification";
 	}
 	
 	
+
 	
+
 }

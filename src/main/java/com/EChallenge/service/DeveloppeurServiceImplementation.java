@@ -7,8 +7,8 @@ import com.EChallenge.dao.DeveloppeurDao;
 import com.EChallenge.model.Developpeur;
 
 @Service
-
 public class DeveloppeurServiceImplementation implements DeveloppeurService {
+	
 	@Autowired
 	private DeveloppeurDao developpeurdao;
 	
