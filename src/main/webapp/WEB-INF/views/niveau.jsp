@@ -12,13 +12,9 @@
 <h3>nn</h3>
 <form:form method="POST"  modelAttribute="nn">
     <table>
-         <tr>
-            <td>niveau</td>
-            <td><form:input path="niveau"/></td>
-        </tr>
         <tr>
             <td colspan="2">
-                <input type="submit"/>
+                <input type="submit" value="valider"/>
             </td>
         </tr>
     </table>

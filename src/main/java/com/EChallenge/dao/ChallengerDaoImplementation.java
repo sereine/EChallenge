@@ -1,9 +1,12 @@
 package com.EChallenge.dao;
 
 import com.EChallenge.model.Challenger;
+
+import org.springframework.stereotype.Repository;
+
 import com.EChallenge.dao.AbstractDao;
 
-
+@Repository
 public class ChallengerDaoImplementation extends AbstractDao<Integer, Challenger> implements ChallengerDao {
 
 	public void add(Challenger challenger) {

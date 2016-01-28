@@ -5,10 +5,13 @@ import java.lang.reflect.ParameterizedType;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public abstract class AbstractDao<PK extends Serializable, T> {
 	
@@ -22,24 +25,35 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 	@PersistenceContext
     private EntityManager manager;
 
-	
 
 	@SuppressWarnings("unchecked")
 	public T getByKey(PK key) {
 		
-		return (T) manager.find(persistentClass, key);
+		return (T) getManager().find(persistentClass, key);
 	}
 
+	
 	public void persist(T entity) {
-		manager.persist(entity);
+		System.out.println("AbsDAO  ");
+		//AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		//manager = (EntityManager) context.getBean("myEmf");
+		getManager().persist(entity);
 	}
 
 	public void supprimer(T entity) {
-		manager.remove(entity);
+		getManager().remove(entity);
 	}
 	
 	public void modifier(T entity) {
-		manager.merge(entity);
+		getManager().merge(entity);
+	}
+
+	public EntityManager getManager() {
+		return manager;
+	}
+
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
 	}
 	
 }

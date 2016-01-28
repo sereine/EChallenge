@@ -3,6 +3,7 @@ package com.EChallenge.controller;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import com.EChallenge.model.Competence;
 import com.EChallenge.model.Compte;
 import com.EChallenge.model.Developpeur;
 import com.EChallenge.model.Entreprise;
+import com.EChallenge.model.EnumNiveaux;
 import com.EChallenge.model.Etudiant;
 import com.EChallenge.model.Niveaux;
 import com.EChallenge.model.Professeur;
@@ -26,6 +28,9 @@ import com.EChallenge.service.NiveauxService;
 
 @Controller
 public class Inscription {
+	
+	@Autowired
+	NiveauxService n;
 	
 	@RequestMapping(value = "/InscriptionDeveloppeur", method = RequestMethod.GET)
 	public String inscriptionDeveloppeur(Model model) {
@@ -131,20 +136,23 @@ public class Inscription {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
 		Niveaux nn = (Niveaux) context.getBean("Niveaux");
-		model.addAttribute("nn" , nn);
 		
+		
+		model.addAttribute("nn" , nn);
+		System.out.println("++++++++++++++");
 		return "niveau";
 	}
 	
 	
 	@RequestMapping(value = "/niveau", method = RequestMethod.POST)
-	public String Enregistrer(@ModelAttribute("nn") Niveaux nn,Model model) {
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-        NiveauxService n = (NiveauxService) context.getBean("NiveauxServiceImplementation");
+	public String Enregistrer(@ModelAttribute("nn") Niveaux nn,Model model) {  
+		
+		//AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		//NiveauxService n = (NiveauxService) context.getBean("NiveauxServiceImplementation");
+        nn.setNiveau(EnumNiveaux.AVANCE);
+		nn.setNiveauxId(1);
+        System.out.println("controlleur  "+nn.getNiveauxId()+"  "+nn.getNiveau());
         n.add(nn);
-	    //DeveloppeurService dev = (DeveloppeurService) context.getBean("DeveloppeurServiceImplementation");
-	    
-		//dev.add(developpeur);
 		return "Authentification";
 	}
 	

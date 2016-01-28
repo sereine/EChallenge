@@ -2,7 +2,10 @@ package com.EChallenge.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,10 +15,11 @@ public class Niveaux {
 	
 	
 	@Id
-    @GeneratedValue
+	@GeneratedValue( strategy= GenerationType.AUTO)
 	@Column(name = "niveauxId")
 	private int niveauxId;
 	
+	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "niveau")
 	private EnumNiveaux niveau;
 
