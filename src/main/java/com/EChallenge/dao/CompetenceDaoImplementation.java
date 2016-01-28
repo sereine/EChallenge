@@ -1,8 +1,15 @@
 package com.EChallenge.dao;
 
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.EChallenge.model.Competence;
 
+
+@Repository
+@Transactional
 public class CompetenceDaoImplementation extends AbstractDao<Integer, Competence> implements CompetenceDao {
 
 	public void add(Competence competence) {

@@ -1,11 +1,15 @@
 package com.EChallenge.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.EChallenge.dao.CompetenceDao;
 import com.EChallenge.model.Competence;
 
+@Service
 public class CompetenceServiceImplementation implements CompetenceService{
 
-	
+	@Autowired
 	private CompetenceDao competencedao;
 	
 	

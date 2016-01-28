@@ -1,10 +1,15 @@
 package com.EChallenge.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.EChallenge.dao.EtablissementDao;
 import com.EChallenge.model.Etablissement;
 
+@Service
 public class EtablissementServiceImplementation implements EtablissementService{
 
+	@Autowired
 	private EtablissementDao etablissementdao;
 	
 	public void add(Etablissement etablissement) {

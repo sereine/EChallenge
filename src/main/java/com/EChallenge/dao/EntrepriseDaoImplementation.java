@@ -1,7 +1,14 @@
 package com.EChallenge.dao;
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.EChallenge.model.Entreprise;
 
+
+@Repository
+@Transactional
 public class EntrepriseDaoImplementation extends AbstractDao<Integer, Entreprise> implements EntrepriseDao{
 
 	public void add(Entreprise entreprise) {

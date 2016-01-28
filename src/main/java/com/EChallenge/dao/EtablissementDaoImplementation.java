@@ -1,6 +1,13 @@
 package com.EChallenge.dao;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.EChallenge.model.Etablissement;
 
+
+@Repository
+@Transactional
 public class EtablissementDaoImplementation extends AbstractDao<Integer, Etablissement> implements EtablissementDao{
 
 	public void add(Etablissement etablissement) {

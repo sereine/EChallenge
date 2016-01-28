@@ -1,8 +1,15 @@
 package com.EChallenge.dao;
 
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
 import com.EChallenge.model.Compte;
 
+
+@Repository
+@Transactional
 public class CompteDaoImplementation extends AbstractDao<Integer, Compte> implements CompteDao{
 
 	public void add(Compte compte) {
