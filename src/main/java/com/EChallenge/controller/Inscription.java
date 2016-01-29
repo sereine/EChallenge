@@ -3,6 +3,8 @@ package com.EChallenge.controller;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -44,21 +46,22 @@ public class Inscription {
 	      Developpeur developpeur = (Developpeur) context.getBean("Developpeur");
 		model.addAttribute("developpeur" , developpeur);
 		
+		
 		return "InscriptionDeveloppeur";
 	}
 	
 	@RequestMapping(value = "/InscriptionDeveloppeur", method = RequestMethod.POST)
-	public String EnregistrerDeveloppeur(@ModelAttribute("developpeur") Developpeur developpeur,Model model) {
+	public String EnregistrerDeveloppeur (@Valid @ModelAttribute("developpeur") Developpeur developpeur,Model model) {
 		
 		
 		System.out.println(developpeur.getDescription()+"  "+developpeur.getCompte().getNomUtilisateur());
-		
-		
 		//AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         //CompteService compte = (CompteService) context.getBean("CompteServiceImplementation");
         compte.add(developpeur.getCompte());
 	    //DeveloppeurService dev = (DeveloppeurService) context.getBean("DeveloppeurServiceImplementation");
-		dev.add(developpeur);
+		
+        
+        dev.add(developpeur);
 		
 		return "redirect:/Authentification";
 	}

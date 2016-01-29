@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
@@ -20,9 +21,11 @@ public class Classe {
 	    @Column(name = "classeId")
 		private String classeId;
 		
+		@NotNull
 		@Column(name = "nom")
 		private String nom;
 		
+		@NotNull
 		@Column(name = "nbrEtudiants")
 		private int nbrEtudiants;
 		

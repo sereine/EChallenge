@@ -15,9 +15,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+import com.EChallenge.validateur.EmailUnique;
 
 
 @Entity
@@ -31,6 +33,7 @@ public class Challenger {
 	private int challengerId;
 	
 	@NotNull
+	@Size(min=1, message="nom doit étre rempli")
 	@Column(name = "nom")
 	private String nom;
 	
@@ -39,6 +42,7 @@ public class Challenger {
 	private String prenom;
 	
 	@NotNull
+	@EmailUnique
 	@Pattern(regexp="^[A-Za-z0-9._-]+@[A-Za-z0-9._-]{2,}\\.[a-z]{2,4}$")
 	@Column(name = "email")
 	private String email;

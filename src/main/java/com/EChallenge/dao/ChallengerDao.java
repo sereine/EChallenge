@@ -1,5 +1,7 @@
 package com.EChallenge.dao;
 
+import java.util.List;
+
 import com.EChallenge.model.Challenger;
 
 public interface ChallengerDao {
@@ -11,5 +13,7 @@ public interface ChallengerDao {
 	void delete(Challenger challenger);
 
 	Challenger findByChallengerId(int challengerId);
+	
+	List<String> findEmails();
 
 }

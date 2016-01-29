@@ -2,6 +2,9 @@ package com.EChallenge.dao;
 
 import com.EChallenge.model.Challenger;
 
+import java.util.List;
+
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -28,6 +31,12 @@ public class ChallengerDaoImplementation extends AbstractDao<Integer, Challenger
 
 	public Challenger findByChallengerId(int challengerId) {
 		return this.getByKey(challengerId);
+	}
+
+	public List<String> findEmails() {
+	        Query query = getManager().createQuery("select email from CHALLENGER ");
+	        List<String> emails = query.getResultList();
+		    return emails;
 	}
 
 }

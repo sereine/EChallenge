@@ -11,4 +11,6 @@ public interface ChallengerService {
 	void delete(Challenger challenger);
 
 	Challenger findByChallengerId(int challengeId);
+	
+	Boolean emailExist(String email);
 }

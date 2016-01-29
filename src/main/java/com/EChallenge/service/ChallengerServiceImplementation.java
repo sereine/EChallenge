@@ -1,5 +1,8 @@
 package com.EChallenge.service;
 
+import java.util.Iterator;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +32,18 @@ public class ChallengerServiceImplementation implements ChallengerService{
 
 	public Challenger findByChallengerId(int challengeId) {
 		return challengerdao.findByChallengerId(challengeId);
+	}
+
+	public Boolean emailExist(String email) {
+		// TODO Auto-generated method stub
+		List<String> emails=challengerdao.findEmails();
+		 for(Iterator<String> it=emails.iterator(); it.hasNext();)
+		 {
+			 if(it.next().equals(email)==true)
+				 return true;
+		 }
+		
+		return false;
 	}
 
 }

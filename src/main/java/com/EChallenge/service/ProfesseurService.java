@@ -10,5 +10,7 @@ public interface ProfesseurService {
 	void delete(Professeur professeur);
 
 	Professeur findByProfesseurId(int professeurId);
+	
+	Boolean referenceExist(String reference);
 
 }

@@ -5,12 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "DEVELOPPEUR")
 public class Developpeur extends Challenger{
 	
-	
+	@NotNull
 	@Column(name = "description")
 	private String description;
 	
