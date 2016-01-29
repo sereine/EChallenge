@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
@@ -28,15 +30,21 @@ public class Challenger {
     @Column(name = "challengerId")
 	private int challengerId;
 	
+	@NotNull
 	@Column(name = "nom")
 	private String nom;
 	
+	@NotNull
 	@Column(name = "prenom")
 	private String prenom;
 	
+	@NotNull
+	@Pattern(regexp="^[A-Za-z0-9._-]+@[A-Za-z0-9._-]{2,}\\.[a-z]{2,4}$")
 	@Column(name = "email")
 	private String email;
 	
+	@NotNull
+	@Pattern(regexp="^((06)|(05))([0-9]){8}$")
 	@Column(name = "tel")
 	private String tel;
 	
