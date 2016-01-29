@@ -10,7 +10,7 @@
 <body>
 
 <h3>Inscription Developpeur</h3>
-<form:form method="POST"  modelAttribute="developpeur">
+<form:form method="POST"  modelAttribute="developpeur" >
     <table>
         <tr>
             <td>Nom</td>
@@ -30,7 +30,7 @@
         <tr>
             <td>Téléphone</td>
             <td><form:input path="tel"/></td>
-            <td><form:errors path="tel"/></td>
+            <td><form:errors path="tel" /></td>
         </tr>
         <tr>
             <td>Description</td>

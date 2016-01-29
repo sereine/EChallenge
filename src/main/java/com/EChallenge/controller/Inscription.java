@@ -46,7 +46,7 @@ public class Inscription {
 	}
 	
 	@RequestMapping(value = "/InscriptionDeveloppeur", method = RequestMethod.POST)
-	public String EnregistrerDeveloppeur (@ModelAttribute("developpeur") Developpeur developpeur,
+	public String EnregistrerDeveloppeur (@Valid @ModelAttribute("developpeur") Developpeur developpeur,
 			BindingResult result, Model model) {
 		if(result.hasErrors())
 			return "InscriptionDeveloppeur";

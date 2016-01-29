@@ -13,8 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Pattern.Flag;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Cascade;
@@ -42,13 +44,13 @@ public class Challenger {
 	private String prenom;
 	
 	@NotNull
-	@EmailUnique
-	@Pattern(regexp="^[A-Za-z0-9._-]+@[A-Za-z0-9._-]{2,}\\.[a-z]{2,4}$")
+	//@EmailUnique
+	@Pattern(regexp="^[A-Za-z0-9._-]+@[A-Za-z0-9._-]{2,}\\.[a-z]{2,4}$" )
 	@Column(name = "email")
 	private String email;
 	
 	@NotNull
-	@Pattern(regexp="^((06)|(05))([0-9]){8}$")
+	@Pattern(regexp="^((06)|(05))([0-9]){8}$" , message="coco")
 	@Column(name = "tel")
 	private String tel;
 	
