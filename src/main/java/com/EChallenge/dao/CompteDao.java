@@ -10,5 +10,7 @@ public interface CompteDao {
 
 	void delete(Compte compte);
 
-	Compte findByCompteId(int compteId);	
+	Compte findByCompteId(int compteId);
+	
+	Compte finfByUserName(String nomUtilisateur);
 }

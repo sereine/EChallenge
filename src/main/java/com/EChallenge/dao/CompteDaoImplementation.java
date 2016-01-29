@@ -32,5 +32,11 @@ public class CompteDaoImplementation extends AbstractDao<Integer, Compte> implem
 		// TODO Auto-generated method stub
 		return getByKey(compteId);
 	}
+	
+	public Compte finfByUserName(String nomUtilisateur) {
+		String hql = "FROM Compte C WHERE C.nomUtilisateur= " + nomUtilisateur;
+		return this.getManager().createQuery(hql, Compte.class).getSingleResult();
+	    
+	}
 
 }

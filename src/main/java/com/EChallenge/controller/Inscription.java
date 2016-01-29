@@ -1,8 +1,5 @@
 package com.EChallenge.controller;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,26 +7,24 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.EChallenge.model.Classe;
-import com.EChallenge.model.Competence;
 import com.EChallenge.model.Compte;
 import com.EChallenge.model.Developpeur;
 import com.EChallenge.model.Entreprise;
-import com.EChallenge.model.EnumNiveaux;
 import com.EChallenge.model.Etudiant;
-import com.EChallenge.model.Niveaux;
 import com.EChallenge.model.Professeur;
 import com.EChallenge.service.CompteService;
 import com.EChallenge.service.DeveloppeurService;
-import com.EChallenge.service.NiveauxService;
 
 
 @Controller
 public class Inscription {
+	
 	
 	
 	@Autowired
@@ -51,18 +46,13 @@ public class Inscription {
 	}
 	
 	@RequestMapping(value = "/InscriptionDeveloppeur", method = RequestMethod.POST)
-	public String EnregistrerDeveloppeur (@Valid @ModelAttribute("developpeur") Developpeur developpeur,Model model) {
-		
-		
-		System.out.println(developpeur.getDescription()+"  "+developpeur.getCompte().getNomUtilisateur());
-		//AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-        //CompteService compte = (CompteService) context.getBean("CompteServiceImplementation");
+	public String EnregistrerDeveloppeur (@ModelAttribute("developpeur") Developpeur developpeur,
+			BindingResult result, Model model) {
+		if(result.hasErrors())
+			return "InscriptionDeveloppeur";
+	
         compte.add(developpeur.getCompte());
-	    //DeveloppeurService dev = (DeveloppeurService) context.getBean("DeveloppeurServiceImplementation");
-		
-        
-        dev.add(developpeur);
-		
+        dev.add(developpeur);	
 		return "redirect:/Authentification";
 	}
 	

@@ -10,5 +10,7 @@ public interface CompteService {
 	void delete(Compte compte);
 
 	Compte findByCompteId(int compteId);
+	
+	boolean nomUtilisateurExiste(String nomUtilisateur); 
 
 }

@@ -1,8 +1,6 @@
 package com.EChallenge.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 import com.EChallenge.dao.CompteDao;
@@ -13,12 +11,13 @@ public class CompteServiceImplementation implements CompteService {
 
 	@Autowired
 	private CompteDao comptedao;
-	
+
 	public void add(Compte compte) {
 		// TODO Auto-generated method stub
-		System.out.println("service   "+compte.getNomUtilisateur());
-		//AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-		//comptedao = (CompteDao) context.getBean("CompteDaoImplementation");
+		System.out.println("service   " + compte.getNomUtilisateur());
+		// AbstractApplicationContext context = new
+		// ClassPathXmlApplicationContext("Beans.xml");
+		// comptedao = (CompteDao) context.getBean("CompteDaoImplementation");
 		comptedao.add(compte);
 	}
 
@@ -34,7 +33,14 @@ public class CompteServiceImplementation implements CompteService {
 
 	public Compte findByCompteId(int compteId) {
 		// TODO Auto-generated method stub
-		return 		comptedao.findByCompteId(compteId);
+		return comptedao.findByCompteId(compteId);
+	}
+
+	public boolean nomUtilisateurExiste(String nomUtilisateur) {
+
+		if (comptedao.finfByUserName(nomUtilisateur) != null)
+			return true;
+		return false;
 	}
 
 }
