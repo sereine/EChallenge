@@ -14,13 +14,14 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
+import com.EChallenge.validateur.ReferenceExist;
+
 @Entity
 @Table(name = "PROFESSEUR")
 public class Professeur extends Challenger{
 
-	
-	
 	@NotNull
+	@ReferenceExist
 	@Column(name = "reference")
 	private String reference;
 

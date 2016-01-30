@@ -20,6 +20,7 @@ import com.EChallenge.model.Etudiant;
 import com.EChallenge.model.Professeur;
 import com.EChallenge.service.CompteService;
 import com.EChallenge.service.DeveloppeurService;
+import com.EChallenge.service.ProfesseurService;
 
 
 @Controller
@@ -32,6 +33,9 @@ public class Inscription {
 	
 	@Autowired
 	DeveloppeurService dev; 
+	
+	@Autowired
+	ProfesseurService prof; 
 	
 	@RequestMapping(value = "/InscriptionDeveloppeur", method = RequestMethod.GET)
 	public String inscriptionDeveloppeur(Model model) {
@@ -62,9 +66,20 @@ public class Inscription {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
 		Professeur professeur = (Professeur) context.getBean("Professeur");
-		model.addAttribute("Professeur" , professeur);
+		model.addAttribute("professeur" , professeur);
 		
 		return "InscriptionProfesseur";
+	}
+	
+	@RequestMapping(value = "/InscriptionProfesseur", method = RequestMethod.POST)
+	public String EnregistrerProfesseur (@Valid @ModelAttribute("professeur") Professeur professeur,
+			BindingResult result, Model model) {
+		if(result.hasErrors())
+			return "InscriptionProfesseur";
+	
+        compte.add(professeur.getCompte());
+        prof.add(professeur);	
+		return "redirect:/Authentification";
 	}
 	
 	@RequestMapping(value = "/InscriptionEtudiant", method = RequestMethod.GET)

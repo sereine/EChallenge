@@ -10,7 +10,7 @@ import com.EChallenge.service.CompteService;
 public class NomUtilisateurUniqueValidator implements ConstraintValidator<NomUtilisateurUnique, String>{
 
 	@Autowired
-	CompteService compteService;
+	private CompteService compteService;
 	
 	public void initialize(NomUtilisateurUnique arg0) {
 		// TODO Auto-generated method stub
@@ -18,11 +18,16 @@ public class NomUtilisateurUniqueValidator implements ConstraintValidator<NomUti
 	}
 
 	public boolean isValid(String nomUtilisateur, ConstraintValidatorContext constraintContext) {
+		
+		System.out.println("***********annotation    "+nomUtilisateur);
 		if(nomUtilisateur == null) {
             return false;
         }
-        
-		if(compteService.nomUtilisateurExiste(nomUtilisateur))
+		
+		
+		//if(compteService == null) System.out.println("***********annotation");
+        if(compteService != null)
+        if(compteService.nomUtilisateurExiste(nomUtilisateur))
 			return false;
 		return true;
 	}

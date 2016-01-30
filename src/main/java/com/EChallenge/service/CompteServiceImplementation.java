@@ -38,9 +38,11 @@ public class CompteServiceImplementation implements CompteService {
 
 	public boolean nomUtilisateurExiste(String nomUtilisateur) {
 
+
+		System.out.println("***********servicee");
 		if (comptedao.finfByUserName(nomUtilisateur) != null)
-			return true;
-		return false;
+			return false;
+		return true;
 	}
 
 }
