@@ -63,7 +63,7 @@ public class Inscription {
 			
 	
 		
-        compte.add(developpeur.getCompte());
+        //compte.add(developpeur.getCompte());
         dev.add(developpeur);	
 		return "redirect:/Authentification";
 	}

@@ -17,6 +17,7 @@ public class ChallengerServiceImplementation implements ChallengerService{
 	private ChallengerDao challengerdao;
 	
 	public void add(Challenger challenger) {
+		
 		challengerdao.add(challenger);
 	}
 

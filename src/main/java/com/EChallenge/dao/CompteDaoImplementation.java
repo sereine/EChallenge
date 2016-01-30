@@ -13,6 +13,7 @@ public class CompteDaoImplementation extends AbstractDao<Integer, Compte> implem
 
 	public void add(Compte compte) {
 		System.out.println(" aaaaaaaaaa dao   " + compte.getCompteId());
+		
 		this.persist(compte);
 
 	}
