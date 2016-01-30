@@ -16,7 +16,7 @@ public class ReferenceExistValidateur implements ConstraintValidator<ReferenceEx
 		if (reference == null) {
 			return false;
 		}
-		 return !professeurService.referenceExist(reference);
+		 return professeurService.referenceExist(reference);
 	}
 
 	public void initialize(ReferenceExist reference) {

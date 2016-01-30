@@ -45,10 +45,20 @@ public class ProfesseurServiceImplementation implements ProfesseurService {
 			BufferedReader br = new BufferedReader(ipsr);
 			String ligne;
 			while ((ligne = br.readLine()) != null) {
+				System.out.println("******************"+ligne);
 				if (ligne.equals(reference) == true)
+				{
+					br.close();
+					ipsr.close();
+					ips.close();
+					//System.out.println("****************existe");
 					return true;
+				}
+					
 			}
 			br.close();
+			ipsr.close();
+			ips.close();
 			return false;
 
 		} catch (Exception e) {
