@@ -1,7 +1,6 @@
 package com.EChallenge.dao;
 
-import java.util.List;
-
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -13,7 +12,7 @@ import com.EChallenge.model.Compte;
 public class CompteDaoImplementation extends AbstractDao<Integer, Compte> implements CompteDao {
 
 	public void add(Compte compte) {
-		System.out.println("dao   " + compte.getNomUtilisateur());
+		System.out.println(" aaaaaaaaaa dao   " + compte.getCompteId());
 		this.persist(compte);
 
 	}
@@ -34,13 +33,18 @@ public class CompteDaoImplementation extends AbstractDao<Integer, Compte> implem
 	}
 
 	public Compte finfByUserName(String nomUtilisateur) {
-		System.out.println("***********dao");
+		
+		
 		String hql = "FROM Compte C WHERE C.nomUtilisateur= '" + nomUtilisateur + "'";
-		List<Compte> compte = this.getManager().createQuery(hql, Compte.class).getResultList();
-		if (compte.isEmpty())
-			return null;
-		else
-			return compte.get(0);
+		Query query = this.getManager().createQuery(hql, Compte.class);
+		
+		if(query.getResultList().isEmpty()){
+			System.out.println("***********DAO kkkkkk");
+			return  null;
+		}
+		
+		return (Compte) query.getSingleResult();
+		
 
 	}
 

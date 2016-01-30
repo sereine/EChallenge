@@ -1,5 +1,6 @@
 package com.EChallenge.validateur;
 
+import javax.transaction.Transactional;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
@@ -17,9 +18,10 @@ public class NomUtilisateurUniqueValidator implements ConstraintValidator<NomUti
 		
 	}
 
+	
 	public boolean isValid(String nomUtilisateur, ConstraintValidatorContext constraintContext) {
 		
-		System.out.println("***********annotation    "+nomUtilisateur);
+		System.out.println("***********annotation  uuuuuuuu   "+nomUtilisateur);
 		if(nomUtilisateur == null) {
             return false;
         }
@@ -27,9 +29,12 @@ public class NomUtilisateurUniqueValidator implements ConstraintValidator<NomUti
 		
 		//if(compteService == null) System.out.println("***********annotation");
         //if(compteService != null)
-        if(compteService.nomUtilisateurExiste(nomUtilisateur))
-			return false;
-		return true;
+        if(!compteService.nomUtilisateurExiste(nomUtilisateur)){
+        	System.out.println("***********the end    ");
+        	return true;
+        }
+			
+		return false;
 	}
 
 }

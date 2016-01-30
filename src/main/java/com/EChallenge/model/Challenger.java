@@ -63,6 +63,7 @@ public class Challenger {
 	
 	@Valid
 	@OneToOne
+	@Cascade(CascadeType.ALL)
 	@JoinColumn(name = "compteId")
 	private Compte compte;
 	

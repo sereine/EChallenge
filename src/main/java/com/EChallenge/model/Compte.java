@@ -9,6 +9,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Persister;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.EChallenge.validateur.NomUtilisateurUnique;
 
 
@@ -22,12 +25,13 @@ public class Compte {
     @Column(name = "compteId")
 	private int compteId;
 	
+
 	@Min(8)
 	@NotNull
 	@Column(name = "motDePasse")
 	private String motDePasse;
 
-	@NotNull
+	@NotEmpty
 	@NomUtilisateurUnique
 	@Column(name = "nomUtilisateur")
 	private String nomUtilisateur;
@@ -57,6 +61,13 @@ public class Compte {
 
 	public void setNomUtilisateur(String nomUtilisateur) {
 		this.nomUtilisateur = nomUtilisateur;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "Compte [compteId=" + compteId + ", motDePasse=" + motDePasse + ", nomUtilisateur=" + nomUtilisateur
+				+ "]";
 	}
 
 

@@ -1,5 +1,6 @@
 package com.EChallenge.controller;
 
+import javax.transaction.Transaction;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,9 +53,16 @@ public class Inscription {
 	@RequestMapping(value = "/InscriptionDeveloppeur", method = RequestMethod.POST)
 	public String EnregistrerDeveloppeur (@Valid @ModelAttribute("developpeur") Developpeur developpeur,
 			BindingResult result, Model model) {
-		if(result.hasErrors())
+		
+		if(result.hasErrors()){
+			System.out.println("////////////errortext"+ result.toString());
 			return "InscriptionDeveloppeur";
+		}
+		
+		System.out.println("//////////compte " + developpeur.getCompte().getCompteId() + developpeur.getCompte().getMotDePasse() + developpeur.getCompte().getNomUtilisateur());
+			
 	
+		
         compte.add(developpeur.getCompte());
         dev.add(developpeur);	
 		return "redirect:/Authentification";

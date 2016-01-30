@@ -34,7 +34,7 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 
 	
 	public void persist(T entity) {
-		System.out.println("AbsDAO  ");
+		System.out.println("AbsDAO   " +entity.toString());
 		//AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		//manager = (EntityManager) context.getBean("myEmf");
 		getManager().persist(entity);
