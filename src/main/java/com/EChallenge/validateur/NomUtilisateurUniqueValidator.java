@@ -18,7 +18,10 @@ public class NomUtilisateurUniqueValidator implements ConstraintValidator<NomUti
 	}
 
 	public boolean isValid(String nomUtilisateur, ConstraintValidatorContext constraintContext) {
-		
+		if(nomUtilisateur == null) {
+            return false;
+        }
+        
 		if(compteService.nomUtilisateurExiste(nomUtilisateur))
 			return false;
 		return true;

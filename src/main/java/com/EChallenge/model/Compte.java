@@ -6,6 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import com.EChallenge.validateur.NomUtilisateurUnique;
 
 
 @Entity
@@ -18,9 +22,13 @@ public class Compte {
     @Column(name = "compteId")
 	private int compteId;
 	
+	@Min(8)
+	@NotNull
 	@Column(name = "motDePasse")
 	private String motDePasse;
 
+	@NotNull
+	@NomUtilisateurUnique
 	@Column(name = "nomUtilisateur")
 	private String nomUtilisateur;
 
