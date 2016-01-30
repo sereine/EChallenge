@@ -40,9 +40,10 @@ public class CompteServiceImplementation implements CompteService {
 
 
 		System.out.println("***********servicee");
+		
 		if (comptedao.finfByUserName(nomUtilisateur) != null)
-			return false;
-		return true;
+			return true;
+		return false;
 	}
 
 }

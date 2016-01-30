@@ -26,7 +26,7 @@ public class NomUtilisateurUniqueValidator implements ConstraintValidator<NomUti
 		
 		
 		//if(compteService == null) System.out.println("***********annotation");
-        if(compteService != null)
+        //if(compteService != null)
         if(compteService.nomUtilisateurExiste(nomUtilisateur))
 			return false;
 		return true;

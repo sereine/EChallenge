@@ -22,7 +22,7 @@ public class Compte {
     @Column(name = "compteId")
 	private int compteId;
 	
-	//@Min(8)
+	@Min(8)
 	@NotNull
 	@Column(name = "motDePasse")
 	private String motDePasse;
