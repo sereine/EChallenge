@@ -22,7 +22,7 @@ public class EmailUniqueUniqueValidateur implements ConstraintValidator<EmailUni
             return false;
         }
         
-        
+        System.out.println("**************validateur");
         if(challengerService != null)
 	    	if(challengerService.emailExist(email) == true)
 	    		return false;

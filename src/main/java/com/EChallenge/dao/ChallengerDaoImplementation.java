@@ -34,9 +34,11 @@ public class ChallengerDaoImplementation extends AbstractDao<Integer, Challenger
 	}
 
 	public List<String> findEmails() {
-	        Query query = getManager().createQuery("select email from CHALLENGER ");
-	        List<String> emails = query.getResultList();
-		    return emails;
+		System.out.println("**************dao");
+		Query query = getManager().createQuery("select email from Challenger ");
+		System.out.println(query.toString());
+		List<String> emails = query.getResultList();
+		return emails;
 	}
 
 }

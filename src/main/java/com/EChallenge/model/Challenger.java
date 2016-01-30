@@ -44,7 +44,7 @@ public class Challenger {
 	private String prenom;
 	
 	@NotNull
-	//@EmailUnique
+	@EmailUnique
 	@Pattern(regexp="^[A-Za-z0-9._-]+@[A-Za-z0-9._-]{2,}\\.[a-z]{2,4}$" )
 	@Column(name = "email")
 	private String email;

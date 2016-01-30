@@ -36,14 +36,14 @@ public class ChallengerServiceImplementation implements ChallengerService{
 
 	public Boolean emailExist(String email) {
 		// TODO Auto-generated method stub
+		
+		System.out.println("**************service");
 		List<String> emails=challengerdao.findEmails();
 		 for(Iterator<String> it=emails.iterator(); it.hasNext();)
 		 {
 			 if(it.next().equals(email)==true)
 				 return true;
 		 }
-		
 		return false;
 	}
-
 }
