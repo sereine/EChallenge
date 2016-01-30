@@ -39,13 +39,15 @@ public class ProfesseurServiceImplementation implements ProfesseurService {
 	public Boolean referenceExist(String reference) {
 		String fichier = "D://TroisiemeAnnee//Gestion de projet//Projet//Workspace//EChallenge//references.txt";
 		// lecture du fichier texte
+		
+		System.out.println("****** service prof");
 		try {
 			InputStream ips = new FileInputStream(fichier);
 			InputStreamReader ipsr = new InputStreamReader(ips);
 			BufferedReader br = new BufferedReader(ipsr);
 			String ligne;
 			while ((ligne = br.readLine()) != null) {
-				System.out.println("******************"+ligne);
+				//System.out.println("******************"+ligne);
 				if (ligne.equals(reference) == true)
 				{
 					br.close();

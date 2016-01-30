@@ -13,6 +13,7 @@ public class ReferenceExistValidateur implements ConstraintValidator<ReferenceEx
 	private ProfesseurService professeurService;
 
 	public boolean isValid(String reference, ConstraintValidatorContext context) {
+		System.out.println("****** validateur prof");
 		if (reference == null) {
 			return false;
 		}

@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Cascade;
@@ -20,6 +21,7 @@ import com.EChallenge.validateur.ReferenceExist;
 @Table(name = "PROFESSEUR")
 public class Professeur extends Challenger{
 
+	@Valid
 	@NotNull
 	@ReferenceExist
 	@Column(name = "reference")
